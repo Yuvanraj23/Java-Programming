@@ -1,1 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int ab=sc.nextInt(),op=sc.nextInt();
+        if(op==1){
+         int ad=sc.nextInt();
+            ab+=ad;
+            System.out.println(ab);
+        }
+        else if(op==2){
+            int w=sc.nextInt();
+            if(w<ab){
+                ab-=w;
+                System.out.println(ab);
+            }
+            else
+                System.out.println("Insufficient Balance");         
+        }
+        else{
+            System.out.println("Invalid Input");
+        }
+    }
+}
