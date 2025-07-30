@@ -24,12 +24,22 @@ public class Solution {
                 System.out.println("Multiplication of two number is "+g);
                 break;
             case '/':
+                if(b<0){
+                    System.out.println("not");
+                }
+                else{
                 float e=(float)a/b;
                 System.out.println("Division of two number is "+e);
+                }
                 break;
             case '%':
+                if(b<0){
+                    System.out.println("not");
+                }
+                else{
                 float f=(float)a%b;
                 System.out.println("Modulo of two number is "+f);
+                }
                 break;
             default:
                 System.out.println("Invalid Input");
