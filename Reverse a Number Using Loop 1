@@ -1,1 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        if(n>0){
+            long t=n;
+        long r=0;
+            while(t>0){
+            int a=(int)(t%10);
+            r=r*10+a;
+            t/=10;
+            }
+        System.out.println(r);
+        }
+        else{
+            System.out.println("Invalid Input");
+        }
+    }
+}
