@@ -1,1 +1,54 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int evenCount = 0;
+        int oddCount = 0;
+        int[] even = new int[n];
+        int[] odd = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                even[evenCount] = arr[i];
+                evenCount++;
+            } else {
+                odd[oddCount] = arr[i];
+                oddCount++;
+            }
+        }
+        for (int i = 0; i < evenCount - 1; i++) {
+            for (int j = i + 1; j < evenCount; j++) {
+                if (even[i] > even[j]) {
+                    int temp = even[i];
+                    even[i] = even[j];
+                    even[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < oddCount - 1; i++) {
+            for (int j = i + 1; j < oddCount; j++) {
+                if (odd[i] > odd[j]) {
+                    int temp = odd[i];
+                    odd[i] = odd[j];
+                    odd[j] = temp;
+                }
+            }
+        }
+        int secondLargestEven = even[evenCount - 2];
+        int secondSmallestOdd = odd[1];
+        int sum = secondLargestEven + secondSmallestOdd;
+        System.out.println("Sum=" + sum);
+    }
+}
+
+    
